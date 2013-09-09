@@ -38,7 +38,11 @@ void Enroll()
 	while (okid == false)
 	{
 		okid = fps.CheckEnrolled(enrollid);
-		if (okid==false) okid++;
+		if (okid==false) enrollid++;
+		if(enrollid > 199) 
+		{Serial.println("Error Device Full");
+		 exit(0); // something to exit the function !
+		 }
 	}
 	fps.EnrollStart(enrollid);
 
